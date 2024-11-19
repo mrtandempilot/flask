@@ -1,11 +1,13 @@
 services:
   - type: web
     name: flask
-    runtime: python3
+    env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: python -m flask run --host=0.0.0.0 --port=$PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.7
-      - key: WEB_CONCURRENCY
-        value: 4
+      - key: FLASK_APP
+        value: app.py
+      - key: FLASK_ENV
+        value: production
