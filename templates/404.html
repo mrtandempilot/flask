@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Flask App</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </nav>
+
+    <main class="container error-page">
+        <h1>404 - Page Not Found</h1>
+        <p class="lead">Sorry, the page you're looking for doesn't exist.</p>
+        <a href="{{ url_for('home') }}" class="btn">Go to Homepage</a>
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} Flask App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
